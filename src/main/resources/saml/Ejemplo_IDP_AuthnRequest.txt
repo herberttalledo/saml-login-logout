@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<saml2p:AuthnRequest AssertionConsumerServiceURL="https://auth.pe-pre.baikalplatform.com/saml-SSO"
+    Destination="https://identity-des.mimovistar.com.pe:24443/oamfed/idp/samlv20" ForceAuthn="false"
+    ID="a49bj79843dd828g4ehgd52494c05ac" IsPassive="false" IssueInstant="2020-05-09T02:12:10.829Z"
+    ProtocolBinding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Version="2.0"
+    xmlns:saml2p="urn:oasis:names:tc:SAML:2.0:protocol">
+    <saml2:Issuer xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion">https://auth.pe-pre.baikalplatform.com/</saml2:Issuer>
+    <saml2p:Extensions>
+        <req:AcrValues xmlns:req="http://www.v7security.com/schema/2015/04/request">3</req:AcrValues>
+        <req:AuthorizationId xmlns:req="http://www.v7security.com/schema/2015/04/request">d5210aa2-c945-4c28-90ae-ed44f2ffdaaf</req:AuthorizationId>
+        <req:ApplicationName xmlns:req="http://www.v7security.com/schema/2015/04/request">novum-mytelco</req:ApplicationName>
+    </saml2p:Extensions>
+</saml2p:AuthnRequest>

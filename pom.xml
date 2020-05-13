@@ -53,6 +53,37 @@
             <artifactId>spring-security-saml-dsl-core</artifactId>
             <version>1.0.5.RELEASE</version>
           </dependency>
+          
+          <!-- https://mvnrepository.com/artifact/org.opensaml/opensaml-core -->
+        <dependency>
+            <groupId>org.opensaml</groupId>
+            <artifactId>opensaml-core</artifactId>
+            <version>3.4.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.10</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.opensaml</groupId>
+            <artifactId>opensaml-saml-impl</artifactId>
+            <version>3.4.5</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.opensaml</groupId>
+            <artifactId>opensaml-saml-api</artifactId>
+            <version>3.4.5</version>
+        </dependency>
+        
+         <dependency>
+            <groupId>com.ibm.cos</groupId>
+            <artifactId>ibm-cos-java-sdk</artifactId>
+            <version>2.6.1</version>
+        </dependency>
 
     </dependencies>
 
@@ -75,8 +106,33 @@
                 <resource>
                     <directory>src/main/resources</directory>
                     <filtering>true</filtering>
+                        <excludes>
+                        <exclude>**/*.jks</exclude>
+                    </excludes>
                 </resource>
+                
+                <resource>
+                    <directory>src/main/resources</directory>
+                    <filtering>false</filtering>
+                    <includes>
+                        <include>**/*.jks</include>
+                    </includes>
+                </resource>
+                
             </resources>
         </build>
+        
+        <profiles>
+            <profile>
+                <id>embed-Tomcat</id>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter-Tomcat</artifactId>
+                        <scope>compile</scope>
+                    </dependency>
+                </dependencies>
+            </profile>
+        </profiles>
 
 </project>
